@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dalati.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --card-bg: #f9f9f9;
+            --card-border: #eeeeee;
+            --text-primary: #000000;
+            --text-secondary: #666666;
+            --accent: #d3d3d3; /* Cinza sutil da sua logo */
+            --radius: 16px;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 80px 20px;
+            display: flex;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        header {
+            margin-bottom: 60px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -3px;
+            line-height: 1;
+        }
+
+        .dot { color: var(--accent); }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-top: 15px;
+            font-weight: 400;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 25px;
+            margin-top: 60px;
+            font-weight: 600;
+        }
+
+        /* Grid de Projetos */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        /* Card Clicável */
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--card-border);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            border-color: #bbbbbb;
+            background: #ffffff;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .card-content {
+            max-width: 85%;
+        }
+
+        .card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Seta indicativa no Hover */
+        .arrow {
+            font-size: 1.5rem;
+            color: var(--accent);
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: translateX(-10px);
+        }
+
+        .card:hover .arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Seção de Contato */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: var(--text-primary);
+            color: var(--bg);
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+            text-align: center;
+        }
+
+        .contact-link.secondary {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--card-border);
+        }
+
+        .contact-link:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            margin-top: 100px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-align: left;
+        }
+
+        /* Ajustes para Celular */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.8rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .arrow { display: none; } /* Remove a seta no mobile para limpar o visual */
+            .card-content { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>dalati<span class="dot">.</span></h1>
+            <p class="subtitle">Soluções a uma linha_</p>
+        </header>
+
+        <main>
+            <div class="section-title">Meus projetos</div>
+            <div class="grid">
+                
+                <a href="#" target="_blank" class="card">
+                    <div class="card-content">
+                        <h3>Nome</h3>
+                        <p>Descricao</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+
+                <a href="#" target="_blank" class="card">
+                    <div class="card-content">
+                        <h3>Nome</h3>
+                        <p>Descricao</p>
+                    </div>
+                    <span class="arrow">→</span>
+                </a>
+
+            </div>
+
+            <div class="section-title">Fale comigo</div>
+            <div class="contact-grid">
+                <a href="mailto:dalatilacerda@gmail.com" class="contact-link">
+                    E-mail
+                </a>
+                <a href="https://instagram.com/dalatidev" target="_blank" class="contact-link secondary">
+                    Instagram
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            &copy; 2026 dalati. — São Luís, MA
+        </footer>
+    </div>
+
+</body>
+</html>
